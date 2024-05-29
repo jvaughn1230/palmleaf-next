@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "../components/navbar.client";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "PalmLeaf",
@@ -18,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Navbar />
         {children}
       </body>
