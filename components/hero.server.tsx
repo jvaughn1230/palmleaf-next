@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 
 const Hero = () => {
-  console.log("fresh load");
-
   return (
     <section className="relative w-full h-[600px] flex justify-center items-center">
       <div className="hero-content rounded-xl">

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { CategoriesProvider } from "@/context/CategoriesContext";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "./globals.css";
 
 import Navbar from "../components/navbar.client";
@@ -15,6 +17,11 @@ export const metadata: Metadata = {
   description: "One stop shop for beachwear and surfboards",
 };
 
+const client = new ApolloClient({
+  uri: "https://crwn-clothing.com/",
+  cache: new InMemoryCache(),
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,8 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar />
-        {children}
+        <ApolloProvider client={client}>
+          <CategoriesProvider>
+            <Navbar />
+            {children}
+          </CategoriesProvider>
+        </ApolloProvider>
       </body>
     </html>
   );

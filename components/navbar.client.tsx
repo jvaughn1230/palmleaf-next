@@ -36,19 +36,19 @@ const Navbar = () => {
             }}
           />
           <li>
-            <Link href="/shoes">Shoes</Link>
+            <Link href="/categories/shoes">Shoes</Link>
           </li>
           <li>
-            <Link href="/surfbaords">Surfboards</Link>
+            <Link href="/categories/surfbaords">Surfboards</Link>
           </li>
           <li>
-            <Link href="/women">Women</Link>
+            <Link href="/categories/women">Women</Link>
           </li>
           <li>
-            <Link href="/men">Men</Link>
+            <Link href="/categories/men">Men</Link>
           </li>
           <li>
-            <Link href="/sunglasses">Sunglasses</Link>
+            <Link href="/categories/sunglasses">Sunglasses</Link>
           </li>
         </ul>
       </div>
