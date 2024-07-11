@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { RootState } from "../store";
+import { RootState } from "../../store";
 import { CategoryMapType } from "@/types";
 
 const selectCategorySlice = (state: RootState) => state.categories;

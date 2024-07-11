@@ -1,12 +1,32 @@
 export interface CategoryType {
   title: string;
   id: number;
-  items: ItemType[];
+  products: ProductType[];
 }
 
-export interface ItemType {
+export interface ProductType {
   id: number;
   name: string;
   price: number;
   image: string;
 }
+
+export type CategoryMapType = {
+  [key: string]: ProductType[];
+};
+
+export type CategoriesStateType = {
+  categories: CategoryType[];
+  name: string;
+  isLoading: boolean;
+};
+
+export type CategoryPayloadType = {
+  payload: CategoryType;
+};
+
+export type setNamePayload = {
+  payload: {
+    name: String;
+  };
+};
